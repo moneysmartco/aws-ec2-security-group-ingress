@@ -1,0 +1,29 @@
+name: 'AWS EC2 SG Ingress'
+description: "Authorize or revoke resource ingress access to an AWS Security Group"
+inputs:
+  security_group_id:
+    description: 'The ID of the Security Group'
+    required: true
+  action_type:
+    description: 'Choose between `authorize` or `revoke`. `authorize` allows access to the SG, `revoke` removes the access.'
+    required: true
+  from_port:
+    description: 'The starting port range for TCP and UDP protocols.'
+    required: true
+  to_port:
+    description: 'The ending port range for TCP and UDP protocols'
+    required: true
+  ip_protocol:
+    description: 'The IP protocol name. Choose between `tcp`, `udp`, `icmp` and `icmpv6`'
+    required: true
+    default: 'tcp'
+  cidr:
+    description: 'Either specify a CIDR range or a source security group, not both. To specify a single IPv4 address, use the /32 prefix length'
+    required: true
+  desc:
+    description: 'The description of the rule.'
+    required: false
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
