@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "aws-sdk": "^2.601.0",
+    "aws-sdk": "^2.814.0",
     "node-vault": "^0.9.11"
   }
 }
